@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
     {% load static %}
   <head>
@@ -29,38 +29,20 @@
 
 <main>
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Uttam Shrestha</h1>
-        <p class="lead text-muted">Hi my name is Uttam, I enjoy making websites. I also enjoy playing football.</p>
-        <p>
-          <a href="https://www.linkedin.com/in/uttam-shrestha-b96032224/" target="_blank" class="btn btn-primary my-2">Let's connect</a>
-          <a href="mailto:utam.shrestha65@gmail.com" class="btn btn-secondary my-2">Email Me</a>
-        </p>
-        <img src="{% static 'uttam.png' %}" height=300 alt="">
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for project in projects.all %}
-        <div class="col">
-          <a href="{% url 'detail' project.id %}">
-          <div class="card shadow-sm">
-            <img class="card-img-top" src="{{ project.image.url }}" height="200" alt="">
-            <div class="card-body">
-              <p class="card-text">{{project.summary}}</p>
-            </div>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Project Detail</h1>
+            <p class="lead text-muted">{{ project.summary }}</p>
+            <p><a href="https://www.linkedin.com/in/uttam-shrestha-b96032224/" target="_blank" class="btn btn-primary my-2">Link</a></p>
+            <img src="{{ project.image.url }}" height=300 alt="">
+            <p>
+              
+              <a href="{% url 'homepage' %}" class="btn btn-secondary my-2">Back</a>
+            </p>
           </div>
-        </a>
         </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+      </section>
 
 
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
